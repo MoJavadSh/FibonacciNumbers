@@ -58,7 +58,6 @@ public class FibonacciGUI extends JFrame {
         }
     }
 
-
     private int fibonacci(int n) {
             if (n <= 1) {
                 return n;
