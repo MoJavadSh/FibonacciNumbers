@@ -47,20 +47,25 @@ public class FibonacciGUI extends JFrame {
         try {
             int number = Integer.parseInt(inputField.getText());
             outputArea.setText("");
-            for (int i = 0; i <= number; i++) {
+            if(number <= 20){
+            for (int i = 0; i <= number; i++)
                 outputArea.append(fibonacci(i) + "\n");
+            } else {
+                outputArea.setText("Please enter a number from 0 - 20");
             }
         } catch (NumberFormatException e) {
             outputArea.setText("Please enter a valid number.");
         }
     }
 
+
     private int fibonacci(int n) {
-        if (n <= 1) {
-            return n;
-        }
-        return fibonacci(n - 1) + fibonacci(n - 2);
+            if (n <= 1) {
+                return n;
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2);
     }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
